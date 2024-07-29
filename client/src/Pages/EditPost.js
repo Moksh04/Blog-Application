@@ -13,7 +13,7 @@ export default function EditPost() {
   useEffect(() => {
     async function getPostData() {
       try {
-        const res = await fetch(`http://localhost:4000/posts/${id}`);
+        const res = await fetch(`https://blog-application-api-eight.vercel.app/posts/${id}`);
         const data = await res.json();
         setTitle(data.title);
         setSummary(data.summary);
@@ -36,7 +36,7 @@ export default function EditPost() {
       data.set('content', content);
       data.set('file', files[0]);
 
-      const res = await fetch(`http://localhost:4000/edit-post/${id}`, {
+      const res = await fetch(`https://blog-application-api-eight.vercel.app/edit-post/${id}`, {
         method: 'PUT',
         body: data,
       });
