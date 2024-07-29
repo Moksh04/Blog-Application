@@ -12,7 +12,7 @@ export default function PostPage() {
   useEffect(() => {
     async function getPostData() {
       try {
-        const res = await fetch(`http://localhost:4000/posts/${id}`);
+        const res = await fetch(`https://blog-application-api-eight.vercel.app/posts/${id}`);
         const data = await res.json();
         setPostInfo(data);
       } catch (err) {
