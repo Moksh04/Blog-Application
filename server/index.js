@@ -21,6 +21,13 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.options('*', cors(corsOptions)); // Handle preflight requests
+// Custom middleware to set CORS headers
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://blog-application-fe.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  next();
+});
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(`${__dirname}/uploads`));
