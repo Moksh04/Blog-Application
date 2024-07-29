@@ -8,7 +8,7 @@ export default function Header() {
   useEffect(() => {
     async function getProfileInfo() {
       try {
-        const res = await fetch('http://localhost:4000/profile', {
+        const res = await fetch('https://blog-application-api-eight.vercel.app/profile', {
           credentials: 'include',
         });
 
@@ -26,7 +26,7 @@ export default function Header() {
   const username = userInfo?.username;
 
   function logout() {
-    fetch('http://localhost:4000/logout', {
+    fetch('https://blog-application-api-eight.vercel.app/logout', {
       method: 'POST',
       credentials: 'include',
     }).then(() => {
