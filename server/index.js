@@ -14,7 +14,8 @@ const app = express();
 
 // we need to specify options in the cors middleware in order to allow the browser to send cookies in request headers
 const corsOptions = {
-  origin: 'http://localhost:3000', // allowing requests from this endpoint to send cookies in requests
+  origin: ['http://localhost:3000'], // allowing requests from this endpoint to send cookies in requests
+  methods: ['POST', 'GET'],
   credentials: true,
 };
 
