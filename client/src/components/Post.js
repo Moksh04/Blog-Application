@@ -13,7 +13,7 @@ export default function Post({
     <div className="post">
       <div className="post-img">
         <Link to={`/posts/${_id}`}>
-          <img src={`http://localhost:4000/${cover}`} alt="blogimg" />
+          <img src={`https://blog-application-api-eight.vercel.app/${cover}`} alt="blogimg" />
         </Link>
       </div>
 
