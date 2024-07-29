@@ -8,7 +8,7 @@ export default function RegisterPage() {
     e.preventDefault();
     if (!username || !password) return;
     try {
-      const res = await fetch('http://localhost:4000/register', {
+      const res = await fetch('https://blog-application-api-eight.vercel.app/register', {
         method: 'POST',
         body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },
