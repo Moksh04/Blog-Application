@@ -4,13 +4,21 @@ import Post from '../components/Post';
 export default function IndexPage() {
   const [posts, setPosts] = useState([]);
 
-  useEffect(function () {
-    fetch('https://blog-application-api-eight.vercel.app/posts').then((res) =>
-      res.json().then((data) => {
-        setPosts(data);
-      })
-    );
-  }, []);
+useEffect(() => {
+  async function fetchPosts() {
+    try {
+      const res = await fetch('/posts');
+      if (!res.ok) throw new Error('Failed to fetch posts');
+      const data = await res.json();
+      setPosts(data);
+    } catch (err) {
+      console.error('Error fetching posts:', err);
+    }
+  }
+
+  fetchPosts();
+}, []);
+
 
   return (
     <>
