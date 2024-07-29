@@ -7,7 +7,7 @@ export default function IndexPage() {
 useEffect(() => {
   async function fetchPosts() {
     try {
-      const res = await fetch('posts');
+      const res = await fetch('https://blog-application-api-eight.vercel.app/posts');
       if (!res.ok) throw new Error('Failed to fetch posts');
       const data = await res.json();
       setPosts(data);
