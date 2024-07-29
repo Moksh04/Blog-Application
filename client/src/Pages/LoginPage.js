@@ -13,7 +13,7 @@ export default function LoginPage() {
     if (!username || !password) return;
 
     try {
-      const res = await fetch('http://localhost:4000/login', {
+      const res = await fetch('https://blog-application-api-eight.vercel.app/login', {
         method: 'POST',
         body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },
