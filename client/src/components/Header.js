@@ -8,7 +8,7 @@ export default function Header() {
   useEffect(() => {
     async function getProfileInfo() {
       try {
-        const res = await fetch('/profile', {
+        const res = await fetch('https://blog-application-api-eight.vercel.app/', {
           credentials: 'include',
         });
 
