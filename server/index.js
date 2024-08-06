@@ -19,7 +19,6 @@ const corsOptions = {
   credentials: true,
 };
 
-app.use(cors(corsOptions));
 app.options('*', cors(corsOptions)); // Handle preflight requests
 // Custom middleware to set CORS headers
 app.use((req, res, next) => {
@@ -28,6 +27,7 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Credentials', 'true');
   next();
 });
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(`${__dirname}/uploads`));
